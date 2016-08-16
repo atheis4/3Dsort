@@ -1,4 +1,9 @@
-"""."""
+"""
+3D_anim.py.
+
+Takes an image file (.jpg or .png preferred)
+returns an animated 3 dimensional scatterplot of the image's pixel values.
+"""
 
 from PIL import Image
 
@@ -14,7 +19,19 @@ def open_pil_image(source):
 
 
 def resize_pil_image(pil_img):
-    """Resize PIL image object."""
+    """Resize PIL image object.
+
+    Input: PIL image object
+    Output: PIL image object (resized)
+
+    This f(x) first judges whether the image is landscape or portrait
+    by finding the ratio between the width and height of the image.
+
+    The largest dimension is then set to 135 pixels (for improved performance)
+    and the smaller dimension is calculated based on the initial ratio of w/h.
+
+    The returned pil image is resized to these new dimensions.
+    """
     width, height = pil_img.size[0], pil_img.size[1]
     ratio = width / height
     if ratio > 1:
@@ -27,7 +44,11 @@ def resize_pil_image(pil_img):
 
 
 def get_rgb_tuple(pil_img):
-    """."""
+    """Use Image object getdata() method to return flat list of RGB tuples.
+
+    Input: PIL image object
+    Output: (R, G, B) tuple for each pixel
+    """
     return pil_img.getdata()
 
 
@@ -47,6 +68,17 @@ def create_cmap(pixel_data):
     """."""
     return [(r/255.0, g/255.0, b/255.0) for (r, g, b) in pixel_data]
 
+
+def init():
+    """."""
+    return ax.scatter(x, y, z, c=color_map, linewidth=0.0)
+
+
+def animate(i):
+    """."""
+    return ax.view_init(elev=15, azim=i)
+
+
 source = '../../seekhue/test_imgs/hopper_nighthawks.jpg'
 
 pil_img = open_pil_image(source)
@@ -60,17 +92,6 @@ ax = Axes3D(fig)
 ax.set_xlabel('R values: 0 - 255')
 ax.set_ylabel('G values: 0 - 255')
 ax.set_zlabel('B values: 0 - 255')
-
-
-def init():
-    """."""
-    return ax.scatter(x, y, z, c=color_map, linewidth=0.0)
-
-
-def animate(i):
-    """."""
-    return ax.view_init(elev=15, azim=i)
-
 
 anim = animation.FuncAnimation(
     fig, animate, init_func=init, frames=720, interval=20
