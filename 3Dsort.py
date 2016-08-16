@@ -60,7 +60,7 @@ def create_and_show_scatter_plot(x, y, z, color_map):
 
 def main():
     """."""
-    source = '../../seekhue/test_imgs/cassatt_1.jpg'
+    source = 'test_imgs/braque.jpg'
     pil_img = open_pil_image(source)
     pil_img = resize_pil_image(pil_img)
     color_data_rgb = get_rgb_tuple(pil_img)
