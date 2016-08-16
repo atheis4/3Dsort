@@ -47,8 +47,9 @@ def create_cmap(pixel_data):
     """."""
     return [(r/255.0, g/255.0, b/255.0) for (r, g, b) in pixel_data]
 
+source = '../../seekhue/test_imgs/hopper_nighthawks.jpg'
 
-pil_img = open_pil_image('../../seekhue/test_imgs/hopper_nighthawks.jpg')
+pil_img = open_pil_image(source)
 pil_img = resize_pil_image(pil_img)
 color_data = get_rgb_tuple(pil_img)
 x, y, z = return_xyz_from_rgb(color_data)
