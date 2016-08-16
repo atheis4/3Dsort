@@ -56,6 +56,9 @@ color_map = create_cmap(color_data)
 
 fig = plt.figure()
 ax = Axes3D(fig)
+ax.set_xlabel('R values: 0 - 255')
+ax.set_ylabel('G values: 0 - 255')
+ax.set_zlabel('B values: 0 - 255')
 
 
 def init():
