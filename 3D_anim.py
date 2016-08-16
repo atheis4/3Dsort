@@ -53,7 +53,11 @@ def get_rgb_tuple(pil_img):
 
 
 def return_xyz_from_rgb(pixel_data):
-    """."""
+    """Create x, y, z positions for scatterplot.
+
+    Input: list of RGB tuples
+    Output: x, y, z lists
+    """
     x = []
     y = []
     z = []
@@ -65,17 +69,17 @@ def return_xyz_from_rgb(pixel_data):
 
 
 def create_cmap(pixel_data):
-    """."""
+    """Refactor RGB tuple data to create synced colormap."""
     return [(r/255.0, g/255.0, b/255.0) for (r, g, b) in pixel_data]
 
 
 def init():
-    """."""
+    """Scatterplot initialization function."""
     return ax.scatter(x, y, z, c=color_map, linewidth=0.0)
 
 
 def animate(i):
-    """."""
+    """Animation view initialization function."""
     return ax.view_init(elev=15, azim=i)
 
 
