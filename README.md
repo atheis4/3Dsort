@@ -30,3 +30,5 @@ Feel free to play with the following settings:
 
   4. **anim.save()** (line 79):
     *The first of the save method's parameters allows you to specify the name, path, and file type of the output. Check out the ffmpeg or mencoder docs to see which file types are supported.*
+
+Run program from command line and enjoy!
