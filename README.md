@@ -19,16 +19,16 @@ From [3D_anim.py](/3D_anim.py), enter the path to the image you wish to deconstr
 
 Feel free to play with the following settings:
 
-  1. **resize_pil_image()** (line 16):
-    *Changing the width or height parameter in this function will change how many pixels are included in the final scatterplot. I recommend lower pixel values for faster processing and less visual noise.*
+  1. **resize_pil_image()** (line 21):
+    *Changing the width or height parameter in this function will change how many pixels are included in the final scatterplot. I recommend lower pixel values for faster processing and less visual noise. For reference, images with the max dimension set to 135px take approx 8 minutes to render.*
 
-  2. **animate()** (line 70):
+  2. **animate()** (line 81):
     *Changing the elev value in the view_init method will change the pitch of the plot in the final animation.*
 
-  3. **anim** (line 75):
+  3. **anim** (line 100):
     *Changing the frames on line 76 will determine how many rotations your final animation will contain. My default of 720 provides two full rotations at a total time of 24 seconds.*
 
-  4. **anim.save()** (line 79):
+  4. **anim.save()** (line 104):
     *The first of the save method's parameters allows you to specify the name, path, and file type of the output. Check out the ffmpeg or mencoder docs to see which file types are supported.*
 
 Run program from command line and enjoy!
