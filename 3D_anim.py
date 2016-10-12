@@ -83,7 +83,7 @@ def animate(i):
     return ax.view_init(elev=15, azim=i)
 
 
-source = '../../seekhue/test_imgs/van_gogh_starry_night.jpg'
+source = 'test_imgs/Sargent_1914.jpeg'
 
 pil_img = open_pil_image(source)
 pil_img = resize_pil_image(pil_img)
@@ -101,4 +101,4 @@ anim = animation.FuncAnimation(
     fig, animate, init_func=init, frames=720, interval=20
 )
 
-anim.save('3d_mp4s/starry_night.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
+anim.save('3d_mp4s/Sargent_1914.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
