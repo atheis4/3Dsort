@@ -12,6 +12,8 @@ After cloning this repository and setting up your virtual environment, you'll ne
 
   1. Install dependencies located in requirements.txt
   2. Download ffmpeg and mencoder using brew Install
+    brew install ffmpeg
+    brew install mplayer
 
 # Usage
 
