@@ -9,6 +9,12 @@
   margin-right: 15px;
 }
 
+.youtube-container {
+  display: flex;
+}
+
 .youtube {
+  flex: 1;
   max-width: 80%;
+  margin-bottom: 15px
 }
