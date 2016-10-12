@@ -1,3 +1,4 @@
 venv
-3d_mp4s/
+mp4s/
 test_imgs/
+.DS_Store
