@@ -38,7 +38,7 @@
 <h3>
 <a id="color-spaces" class="anchor" href="#color-spaces" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Color Spaces.</h3>
 
-<p>Early in the production of SeekHue, I was confronted with the problem of multidimensionality. Color exists in our computers as an tuple of red, green, blue values between 0 and 255. Trying to map this three-dimensional object, <em>color</em>, into two-dimensions, <em>the flat surface of a painting/.jpg</em>, created a lot of noise. The original transformations were less than impressive as the crude sorted method in python sorts a three-dimensional tuple by its first value, in this case the red value of each pixel, and only touches on green and blue if red values are the same.</p>
+<p>Early in the production of SeekHue, I was confronted with the problem of multidimensionality. Color exists in our computers as an tuple of red, green, blue values between 0 and 255. Trying to map this three-dimensional object, <em>color</em>, into two-dimensions, <em>the flat surface of a painting</em>, created a lot of noise. The original transformations were less than impressive as the crude sorted method in python sorts a three-dimensional tuple by its first value, in this case the red value of each pixel, and only touches on green and blue if red values are the same.</p>
 
 <p>To reduce noise, I had to research new color systems. I turned from RGB models to hue, lightness, and saturation values (HLS). HLS is a cylindrical color model where the hue value determines the specific color, from 0 to 360 degrees, while lightness and saturation determine its quality. This conversion reduced the dimensionality of my data and produced much less noisy 2D mappings based on hue.</p>
 
@@ -67,6 +67,6 @@
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
-    
+
   </body>
 </html>
