@@ -1,6 +1,10 @@
+.flexbox {
+  display: flex;
+  margin-bottom: 20px;
+}
+
 .lisa {
+  flex: 1;
   max-width: 32%;
   margin-right: 15px;
-  margin-bottom: 20px;
-  float: left;
 }
