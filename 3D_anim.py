@@ -5,6 +5,8 @@ Takes an image file (.jpg or .png preferred)
 returns an animated 3 dimensional scatterplot of the image's pixel values.
 """
 
+import os
+
 from PIL import Image
 
 from matplotlib import animation
@@ -83,9 +85,12 @@ def animate(i):
     return ax.view_init(elev=15, azim=i)
 
 
-source = 'test_imgs/mona_lisa.jpg'
+# path = '../PAM_proj/transform/'
+#
+# for filename in os.listdir(path):
+#     source = path + filename
 
-pil_img = open_pil_image(source)
+pil_img = open_pil_image('../PAM_proj/PAM_originals/monet_nympheas.jpg')
 pil_img = resize_pil_image(pil_img)
 color_data = get_rgb_tuple(pil_img)
 x, y, z = return_xyz_from_rgb(color_data)
@@ -101,4 +106,4 @@ anim = animation.FuncAnimation(
     fig, animate, init_func=init, frames=720, interval=20
 )
 
-anim.save('3d_mp4s/mona_lisa.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
+anim.save('../PAM_proj/mp4s/monet_nympheas.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
