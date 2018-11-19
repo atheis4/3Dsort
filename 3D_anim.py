@@ -85,6 +85,11 @@ def animate(i):
     return ax.view_init(elev=15, azim=i)
 
 
+def set_output_name(input_name):
+    """."""
+    pass
+
+
 # path = '../PAM_proj/transform/'
 #
 # for filename in os.listdir(path):
@@ -93,6 +98,8 @@ def animate(i):
 pil_img = open_pil_image('../PAM_proj/PAM_originals/monet_nympheas.jpg')
 pil_img = resize_pil_image(pil_img)
 color_data = get_rgb_tuple(pil_img)
+
+# Following Two: Targetted for possible multiprocessing
 x, y, z = return_xyz_from_rgb(color_data)
 color_map = create_cmap(color_data)
 
@@ -103,7 +110,23 @@ ax.set_ylabel('G values: 0 - 255')
 ax.set_zlabel('B values: 0 - 255')
 
 anim = animation.FuncAnimation(
-    fig, animate, init_func=init, frames=720, interval=20
+    fig, animate,
+    init_func=init,
+    frames=720,
+    interval=20
 )
 
-anim.save('../PAM_proj/mp4s/monet_nympheas.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
+anim.save(
+    '../PAM_proj/mp4s/monet_nympheas.mp4',
+    fps=30,
+    extra_args=['-vcodec', 'libx264']
+)
+
+
+def main():
+    """."""
+    pass
+
+
+if __name__ == '__main__':
+    main()
